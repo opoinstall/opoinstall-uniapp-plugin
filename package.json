@@ -1,0 +1,48 @@
+{
+    "name": "opoinstall-uniapp-plugin",
+    "id": "opoinstall-plugin",
+    "version": "1.0.0",
+    "description": "uni-app集成 opoinstall SDK 插件",
+    "_dp_type": "nativeplugin",
+    "_dp_nativeplugin": {
+        "ios": {
+            "plugins": [
+                {
+                    "type": "module",
+                    "name": "opoinstall-plugin",
+                    "class": "OpoInstallUniModule"
+                }
+            ],
+            "hooksClass": "OpoInstallUniProxy",
+            "integrateType": "library",
+            "deploymentTarget": "9.0",
+            "parameters": {
+                "APP_KEY": {
+                    "des": "opoinstall平台为应用分配的AppKey",
+                    "key": "com.opoinstall.APP_KEY"
+                }
+            }
+        },
+        "android": {
+            "plugins": [
+                {
+                    "type": "module",
+                    "name": "opoinstall-plugin",
+                    "class": "com.opoinstall.dcloud.OpoInstallModule"
+                }
+            ],
+            "hooksClass": "com.opoinstall.dcloud.OpoInstallHookProxy",
+            "integrateType": "aar",
+            "dependencies": [],
+            "abis": [],
+            "minSdkVersion": "21",
+            "permissions": [],
+            "parameters": {
+                "APP_KEY": {
+                    "des": "opoinstall平台为应用分配的AppKey",
+                    "key": "com.opoinstall.APP_KEY"
+                }
+            }
+        }
+    }
+}
